@@ -1,0 +1,13 @@
+npx sequelize-cli model:generate --name Users --attributes name:string,surname:string,email:string,password:string,specialization:string,role:string,clinic:string,jobTime:string
+npx sequelize-cli model:generate --name Appointments --attributes type:string,description:string,doctorIds:string,patient:string,diagnosis:string,consultationDate:date,endDate:string,clinic:string
+
+npx sequelize-cli model:generate --name Metrics --attributes patient:string,type:string,value:string,notes:string
+npx sequelize-cli model:generate --name Specializations --attributes title:string,description:string,code:string
+npx sequelize-cli model:generate --name Clinics --attributes title:string,description:string,address:string
+npx sequelize-cli model:generate --name Diagnoses --attributes title:string,description:string,code:string
+
+npx sequelize-cli model:generate --name Questionnaires --attributes type:string,questions:string,patient:string
+npx sequelize-cli model:generate --name Answers --attributes patient:string,questionnaire:string,questionAndAnswer:string
+npx sequelize-cli model:generate --name Questions --attributes type:string,description:string,answers:string
+
+npx sequelize-cli db:migrate
